@@ -1,20 +1,22 @@
-# MyEnumerable module
+# frozen_string_literal: true
+
+# module
 module MyEnumerable
   def all?
     bool = true
-    each { |n| bool = false unless yield n }
+    each { |elm| bool = false unless yield elm }
     bool
   end
 
   def any?
     bool = false
-    each { |n| bool = true if yield n }
+    each { |elm| bool = true if yield elm }
     bool
   end
 
   def filter
-    arr = []
-    each { |n| arr.push(n) if yield n }
-    arr
+    filtered_arr = []
+    each { |elm| filtered_arr.push(n) if yield elm }
+    filtered_arr
   end
 end
