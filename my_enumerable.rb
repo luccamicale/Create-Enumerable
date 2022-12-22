@@ -1,4 +1,4 @@
-module MyEnumerable
+module my_enumerable
   def all?
     bool = true
     each { |n| bool = false unless yield n }
